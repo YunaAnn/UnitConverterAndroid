@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/main_menu">
+            <menu>
+                <item
+                    android:id="@+id/nav_main"
+                    android:icon="@drawable/ic_ac_unit"
+                    android:title="@string/temperature_converter" />
+                <item
+                    android:id="@+id/nav_length"
+                    android:icon="@drawable/ic_directions_car"
+                    android:title="@string/length_converter" />
+                <item
+                    android:id="@+id/nav_number"
+                    android:icon="@drawable/ic_filter_1"
+                    android:title="@string/number_converter" />
+            </menu>
+        </item>
+    </group>
+</menu>

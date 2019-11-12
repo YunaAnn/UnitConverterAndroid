@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">UnitConverterAndroid</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle"> github.com/YunaAnn </string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_length">LengthActivity</string>
+    <string name="title_activity_number">NumberActivity</string>
+    <string name="main_menu">CONVERSION</string>
+    <string name="length_converter">Length Converter</string>
+    <string name="number_converter">Number Converter</string>
+    <string name="temperature_converter">Temperature Converter</string>
+</resources>
