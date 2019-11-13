@@ -1,20 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="40dp"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".LengthActivity"
     tools:showIn="@layout/app_bar_length">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Length Converter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#262626"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="Length Converter" />
 
-</android.support.constraint.ConstraintLayout>
+    <View style="@style/Divider"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/meters_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Meters"
+            android:layout_marginRight="63dp"
+            android:textColor="#262626"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="153dp"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/meters_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="m"
+            android:textColor="#262626"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/meters_button"
+            android:layout_width="102dp"
+            android:textColor="@color/cardview_light_background"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:text="Convert" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/kilometers_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Kilometers"
+            android:layout_marginRight="21dp"
+            android:textColor="#262626"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="153dp"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/kilometers_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="km"
+            android:textColor="#262626"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/kilometers_button"
+            android:layout_width="102dp"
+            android:textColor="@color/cardview_light_background"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:text="Convert" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/feet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Feet"
+            android:layout_marginRight="86dp"
+            android:textColor="#262626"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="153dp"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/feet_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ft"
+            android:textColor="#262626"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/feet_button"
+            android:layout_width="102dp"
+            android:textColor="@color/cardview_light_background"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:text="Convert" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/miles_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Miles"
+            android:layout_marginRight="72dp"
+            android:textColor="#262626"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="153dp"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/miles_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="mi"
+            android:textColor="#262626"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/miles_button"
+            android:layout_width="100dp"
+            android:textColor="@color/cardview_light_background"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:text="Convert" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="100dp"
+            android:textColor="@color/cardview_light_background"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Reset" />
+
+    </LinearLayout>
+
+</LinearLayout>
