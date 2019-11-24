@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    public void reset()
+    private void reset()
     {
         fahrenheitBox.setText(" ");
         celsiusBox.setText(" ");
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
         status.setText("Status : OK");
     }
 
-    public void fahrenheitConvertion()
+    private void fahrenheitConvertion()
     {
         try
         {
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void celsiusConvertion()
+    private void celsiusConvertion()
     {
         try {
             celsius = Double.parseDouble(celsiusBox.getText().toString());
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void kelvinConvertion()
+    private void kelvinConvertion()
     {
         try
         {
