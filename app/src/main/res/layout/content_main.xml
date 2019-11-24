@@ -45,6 +45,9 @@
             android:layout_marginRight="10dp">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/fahrenheit_box"
+                android:textSize="14dp"
+                android:inputType="numberDecimal"
                 android:layout_width="153dp"
                 android:layout_height="wrap_content" />
         </android.support.design.widget.TextInputLayout>
@@ -92,7 +95,10 @@
             android:layout_marginRight="10dp">
 
             <android.support.design.widget.TextInputEditText
+                android:inputType="numberDecimal"
+                android:id="@+id/celsius_box"
                 android:layout_width="153dp"
+                android:textSize="14dp"
                 android:layout_height="wrap_content" />
         </android.support.design.widget.TextInputLayout>
 
@@ -139,7 +145,10 @@
             android:layout_marginRight="10dp">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/kelvin_box"
+                android:inputType="numberDecimal"
                 android:layout_width="153dp"
+                android:textSize="14dp"
                 android:layout_height="wrap_content" />
         </android.support.design.widget.TextInputLayout>
 
@@ -172,5 +181,16 @@
             android:text="Reset" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Status : OK"
+        android:layout_marginRight="50dp"
+        android:textColor="#262626"
+        android:textSize="10sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
