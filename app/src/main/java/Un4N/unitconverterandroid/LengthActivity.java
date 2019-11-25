@@ -135,7 +135,7 @@ public class LengthActivity extends AppCompatActivity
         }
         catch(NumberFormatException e)
         {
-            status.setText("Status : No data inserted. Try again. Error -> " + e.getMessage());
+            status.setText("Status : Try again. Error -> NumberFormatException -> " + e.getMessage());
             e.printStackTrace();
         }
         catch(Exception e)
@@ -160,7 +160,7 @@ public class LengthActivity extends AppCompatActivity
         }
         catch(NumberFormatException e)
         {
-            status.setText("Status : No data inserted. Try again. Error -> " + e.getMessage());
+            status.setText("Status : Try again. Error -> NumberFormatException -> " + e.getMessage());
             e.printStackTrace();
         }
         catch(Exception e)
@@ -185,7 +185,7 @@ public class LengthActivity extends AppCompatActivity
         }
         catch(NumberFormatException e)
         {
-            status.setText("Status : No data inserted. Try again. Error -> " + e.getMessage());
+            status.setText("Status : Try again. Error -> NumberFormatException -> " + e.getMessage());
             e.printStackTrace();
         }
         catch(Exception e)
@@ -210,7 +210,7 @@ public class LengthActivity extends AppCompatActivity
         }
         catch(NumberFormatException e)
         {
-            status.setText("Status : No data inserted. Try again. Error -> " + e.getMessage());
+            status.setText("Status : Try again. Error -> NumberFormatException -> " + e.getMessage());
             e.printStackTrace();
         }
         catch(Exception e)

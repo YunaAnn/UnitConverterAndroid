@@ -21,14 +21,10 @@ public class NumberActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
 
-    private int binary;
-    private int octal;
-    private int decimal;
+    private String binary = "";
+    private String octal = "";
+    private String decimal = "";
     private String hex = "";
-
-    private int remainder;
-    private int i;
-    private int step;
 
     private TextInputEditText binaryBox;
     private TextInputEditText octalBox;
@@ -75,9 +71,6 @@ public class NumberActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                octal = 0;
-                decimal = 0;
-                hex = " ";
                 binaryConvertion();
             }
         });
@@ -87,9 +80,6 @@ public class NumberActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                binary = 0;
-                decimal = 0;
-                hex = " ";
                 octalConvertion();
             }
         });
@@ -99,9 +89,6 @@ public class NumberActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                binary = 0;
-                octal = 0;
-                hex = " ";
                 decimalConvertion();
             }
         });
@@ -111,9 +98,6 @@ public class NumberActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                binary = 0;
-                octal = 0;
-                decimal = 0;
                 hexConvertion();
             }
         });
@@ -130,10 +114,10 @@ public class NumberActivity extends AppCompatActivity
 
     private void reset()
     {
-        binaryBox.setText(" ");
-        octalBox.setText(" ");
-        decimalBox.setText(" ");
-        hexBox.setText(" ");
+        binaryBox.setText("");
+        octalBox.setText("");
+        decimalBox.setText("");
+        hexBox.setText("");
         status.setText("Status : OK");
     }
 
@@ -141,18 +125,18 @@ public class NumberActivity extends AppCompatActivity
     {
         try
         {
-            binary = Integer.parseInt(binaryBox.getText().toString());
+            binary = binaryBox.getText().toString().toLowerCase();
             /*Octal*/
-            octalBox.setText(String.valueOf(binaryToOctal(binary)));
+            octalBox.setText(Integer.toOctalString(Integer.parseInt(String.valueOf(binary),2)));
             /*decimal*/
-            decimalBox.setText(String.valueOf(binaryToDecimal(binary)));
+            decimalBox.setText(Integer.toString(Integer.parseInt(String.valueOf(binary),2)));
             /*hex*/
-            hexBox.setText(String.valueOf(binaryToHex(binary)));
+            hexBox.setText(Integer.toHexString(Integer.parseInt(String.valueOf(binary),2)).toUpperCase());
             status.setText("Status : OK");
         }
         catch(NumberFormatException e)
         {
-            status.setText("Status : No data inserted. Try again. Error -> " + e.getMessage());
+            status.setText("Status : Try again. Error -> NumberFormatException -> " + e.getMessage());
             e.printStackTrace();
         }
         catch(Exception e)
@@ -160,62 +144,24 @@ public class NumberActivity extends AppCompatActivity
             status.setText("Status : Try again. Error ->" + e.getMessage());
             e.printStackTrace();
         }
-    }
-
-    private int binaryToOctal(int binary)
-    {
-        i = 0;
-        while(binary != 0)
-        {
-            decimal += (binary % 10) * Math.pow(2,i);
-            ++i;
-            binary/=10;
-        }
-        i = 1;
-        while (decimal != 0)
-        {
-            octal += (decimal % 8) * i;
-            decimal /= 8;
-            i *= 10;
-        }
-        return octal;
-    }
-
-    private int binaryToDecimal(int binary)
-    {
-        i = 0;
-        while (binary != 0)
-        {
-            remainder = binary % 10;
-            binary /= 10;
-            decimal += remainder * Math.pow(2,i);
-            ++i;
-        }
-        return decimal;
-    }
-
-    private String binaryToHex(int binary)
-    {
-
-    return hex;
     }
 
     private void octalConvertion()
     {
         try
         {
-            octal = Integer.parseInt(octalBox.getText().toString());
+            octal = octalBox.getText().toString().toLowerCase();
             /*binary*/
-            binaryBox.setText(String.valueOf(octalToBinary(octal)));
+            binaryBox.setText(Integer.toBinaryString(Integer.parseInt(String.valueOf(octal),8)));
             /*decimal*/
-            decimalBox.setText(String.valueOf(octalToDecimal(octal)));
+            decimalBox.setText(Integer.toString(Integer.parseInt(String.valueOf(octal),8)));
             /*hex*/
-            hexBox.setText(String.valueOf(octalToHex(octal)));
+            hexBox.setText(Integer.toHexString(Integer.parseInt(String.valueOf(octal),8)).toUpperCase());
             status.setText("Status : OK");
         }
         catch(NumberFormatException e)
         {
-            status.setText("Status : No data inserted. Try again. Error -> " + e.getMessage());
+            status.setText("Status : Try again. Error -> NumberFormatException -> " + e.getMessage());
             e.printStackTrace();
         }
         catch(Exception e)
@@ -223,60 +169,24 @@ public class NumberActivity extends AppCompatActivity
             status.setText("Status : Try again. Error ->" + e.getMessage());
             e.printStackTrace();
         }
-    }
-
-    private int octalToBinary(int octal)
-    {
-        i = 0;
-        while(octal != 0)
-        {
-            decimal += (octal % 10) * Math.pow(8,i);
-            ++i;
-            octal /= 10;
-        }
-        i = 1;
-        while (decimal != 0)
-        {
-            binary += (decimal % 2) * i;
-            decimal /= 2;
-            i *= 10;
-        }
-        return binary;
-    }
-
-    private int octalToDecimal(int octal)
-    {
-        i = 0;
-        while(octal != 0)
-        {
-            decimal += (octal % 10) * Math.pow(8,i);
-            ++i;
-            octal /= 10;
-        }
-        return decimal;
-    }
-
-    private String octalToHex(int octal)
-    {
-        return hex;
     }
 
     private void decimalConvertion()
     {
         try
         {
-            decimal = Integer.parseInt(decimalBox.getText().toString());
+            decimal = decimalBox.getText().toString().toLowerCase();
             /*binary*/
-            binaryBox.setText(String.valueOf(decimalToBinary(decimal)));
+            binaryBox.setText(Integer.toBinaryString(Integer.parseInt(decimal)));
             /*octal*/
-            octalBox.setText(String.valueOf(decimalToOctal(decimal)));
+            octalBox.setText(Integer.toOctalString(Integer.parseInt(decimal)));
              /*hex*/
-            hexBox.setText(String.valueOf(decimalToHex(decimal)));
+            hexBox.setText(Integer.toHexString(Integer.parseInt(decimal)).toUpperCase());
             status.setText("Status : OK");
         }
         catch(NumberFormatException e)
         {
-            status.setText("Status : No data inserted. Try again. Error -> " + e.getMessage());
+            status.setText("Status : Try again. Error -> NumberFormatException -> " + e.getMessage());
             e.printStackTrace();
         }
         catch(Exception e)
@@ -285,55 +195,23 @@ public class NumberActivity extends AppCompatActivity
             e.printStackTrace();
         }
     }
-
-    private int decimalToBinary(int decimal)
-    {
-        step = 1;
-        i = 1;
-        while (decimal != 0)
-        {
-            remainder = decimal % 2;
-            decimal /= 2;
-            binary += remainder * i;
-            i *= 10;
-        }
-        return binary;
-    }
-
-    private int decimalToOctal(int decimal)
-    {
-        i = 1;
-        while (decimal != 0)
-        {
-            octal += (decimal % 8) * i;
-            decimal /= 8;
-            i *= 10;
-        }
-        return octal;
-    }
-
-    private String decimalToHex(int decimal)
-    {
-        return hex;
-    }
-
 
     private void hexConvertion()
     {
         try
         {
-            hex = decimalBox.getText().toString();
+            hex = hexBox.getText().toString().toLowerCase();
             /*binary*/
-            binaryBox.setText(String.valueOf(hexToBinary(hex)));
+           binaryBox.setText(Integer.toBinaryString(Integer.parseInt(String.valueOf(hex),16)));
             /*octal*/
-            octalBox.setText(String.valueOf(hexToOctal(hex)));
+           octalBox.setText(Integer.toOctalString(Integer.parseInt(String.valueOf(hex),16)));
             /*decimal*/
-            decimalBox.setText(String.valueOf(hexToDecimal(hex)));
+            decimalBox.setText(Integer.toString(Integer.parseInt(String.valueOf(hex),16)));
             status.setText("Status : OK");
         }
         catch(NumberFormatException e)
         {
-            status.setText("Status : No data inserted. Try again. Error -> " + e.getMessage());
+            status.setText("Status : Try again. Error -> NumberFormatException -> " + e.getMessage());
             e.printStackTrace();
         }
         catch(Exception e)
@@ -341,21 +219,6 @@ public class NumberActivity extends AppCompatActivity
             status.setText("Status : Try again. Error ->" + e.getMessage());
             e.printStackTrace();
         }
-    }
-
-    private int hexToBinary(String hex)
-    {
-        return binary;
-    }
-
-    private int hexToOctal(String hex)
-    {
-        return octal;
-    }
-
-    private int hexToDecimal(String hex)
-    {
-        return decimal;
     }
 
     @Override

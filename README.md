@@ -28,13 +28,13 @@ NUMBER CONVERSION
   
   ---------
   
-  TODO:
+TODO:
 - possible visual changes
-- number conversion - hex
+- minor fixes
 
 DONE:
 - Navigation drawer
 - UI
 - temperature conversion
 - length conversion
-- number conversion - binary, octal, decimal
+- number conversion
